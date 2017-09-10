@@ -1,4 +1,4 @@
 class Service < ApplicationRecord
-  has_many:users, through: :post
-  has_many:post
+  has_many :users, through: :posts
+  has_many :posts
 end

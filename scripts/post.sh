@@ -13,7 +13,7 @@ curl "${API}${URL_PATH}" \
       "description": "'"${DESCRIPTION}"'",
       "title": "'"${TITLE}"'",
       "date_time": "'"${DATE_TIME}"'",
-      "services_id": "'"${SERVICES_ID}"'"
+      "service_id": "'"${SERVICE_ID}"'"
     }
   }'
 

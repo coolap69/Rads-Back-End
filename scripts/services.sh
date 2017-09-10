@@ -9,7 +9,7 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --data '{
     "service": {
-      "service": "'"${type}"'"
+      "service": "'"${category}"'"
 
     }
   }'

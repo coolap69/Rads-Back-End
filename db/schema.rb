@@ -28,14 +28,14 @@ ActiveRecord::Schema.define(version: 20170829152907) do
     t.text     "description"
     t.string   "title"
     t.datetime "date_time"
-    t.integer  "services_id"
+    t.integer  "service_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["services_id"], name: "index_posts_on_services_id", using: :btree
+    t.index ["service_id"], name: "index_posts_on_service_id", using: :btree
   end
 
   create_table "services", force: :cascade do |t|
-    t.string   "type"
+    t.string   "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,12 +46,12 @@ ActiveRecord::Schema.define(version: 20170829152907) do
     t.string   "password_digest", null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "first_name",      null: false
+    t.string   "last_name",       null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["token"], name: "index_users_on_token", unique: true, using: :btree
   end
 
   add_foreign_key "examples", "users"
-  add_foreign_key "posts", "services", column: "services_id"
+  add_foreign_key "posts", "services"
 end
