@@ -5,8 +5,8 @@ URL_PATH="/posts"
 curl "${API}${URL_PATH}/$ID"\
   --include \
   --request POST \
-  --header "Authorization: Token token=$TOKEN" \
   --header "Content-Type: application/json" \
+  --header "Authorization: Token token=$TOKEN" \
   --data '{
     "post": {
       "user_id": "'"${USER_ID}"'",
