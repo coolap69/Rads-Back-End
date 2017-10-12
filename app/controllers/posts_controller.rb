@@ -17,6 +17,7 @@ class PostsController < OpenReadController
   def create
     # binding.pry
     @post = current_user.posts.build(post_params)
+    @post.service = Service.first
 
     if @post.save
       render json: @post, status: :created, location: @post
@@ -47,6 +48,6 @@ class PostsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:id, :user_id, :description, :title, :date_time, :service_id)
+      params.require(:post).permit(:user_id, :description, :title, :date_time, :service_id)
     end
 end

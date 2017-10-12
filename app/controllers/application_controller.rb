@@ -20,6 +20,7 @@ class ApplicationController < ActionController::API
   # Use Token Authentication
   include ActionController::HttpAuthentication::Token::ControllerMethods
   def authenticate
+    # binding.pry
     @current_user =
       authenticate_or_request_with_http_token(&AUTH_PROC)
   end
